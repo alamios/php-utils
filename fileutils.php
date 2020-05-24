@@ -1,18 +1,4 @@
 <?php
-    function startsWith($str, $startstr) { 
-        $len = strlen($startstr); 
-        return (substr($str, 0, $len) == $startstr); 
-    } 
-
-    function endsWith($str, $endstr) { 
-        $len = strlen($endstr); 
-        return $len == 0 || (substr($str, -$len) == $endstr); 
-    } 
-
-    function insertAt($str, $index, $insert) {
-        return substr_replace($str, $insert, $index, 0);
-    }
-
     function generateUnusedFilepath($path, $file) {
         $fname = $file;
         $i = 1;
@@ -73,24 +59,6 @@
         return $files;
     }
 
-    function getAliasRealPath($aliaspath, $confpath) { 
-        $conf = file_get_contents($confpath);
-        $aliaspath = formatPath($aliaspath);   
-        $subpath = "";
-        while (strlen($aliaspath)) {
-            $aindex = strpos($conf, "Alias ".$aliaspath);
-            if (!$aindex)
-                $subpath = basename($aliaspath) ."/". $subpath;
-            $nextdiv = strpos($aliaspath, basename($aliaspath))-1;
-            $aliaspath = substr($aliaspath, 0, $nextdiv);
-        }
-        $qindex1 = strpos($conf, "\"", $aindex)+1;
-        $qindex2 = strpos($conf, "\"", $qindex1);
-        $qlen = $qindex2 - $qindex1;
-        $root = substr($conf, $qindex1, $qlen);
-        return formatPath($root ."/". $subpath);
-    }
-
     function clearFiles($path, $startpatt, $endpatt) {
         $scan = scandir($path);
         foreach($scan as $file) {
@@ -98,7 +66,7 @@
                 unlink($path."/".$file);
         }
     }
-    
+
     class ExtendedDirectoryIterator extends DirectoryIterator {
         function isLink() {
             return parent::isLink() || endsWith($this->getFilename(), ".lnk");
