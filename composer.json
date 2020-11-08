@@ -1,0 +1,16 @@
+{
+    "name": "alamios/someutils-php",
+    "description": "A collection of PHP utilities",
+    "type": "library",
+    "version": "1.0.0-dev",
+    "homepage": "https://github.com/alamios/someutils-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "alamios",
+            "email": "alamios@pm.me",
+            "homepage": "https://alamios.es",
+            "role": "Developer"
+        }
+    ]
+}

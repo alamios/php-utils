@@ -1,5 +1,5 @@
-# php-utils
-PHP utilities
+# somutils-php
+A collection of PHP utilities
 
 ## License
 <pre><code>Licensed under the <a href="https://opensource.org/licenses/MIT">MIT</a> license.

@@ -1,4 +1,6 @@
 <?php
+    require_once("textutils.php");
+    
     function generateUnusedFilepath($path, $file) {
         $fname = $file;
         $i = 1;
@@ -52,11 +54,15 @@
                         $files = array_merge($files, getFiles($file->getPathname(), true));
                 }
                 else {
-                    $files[] = $file->getPathname();
+                    $files[] = escape($file->getPathname());
                 }
             }
         }
         return $files;
+    }
+
+    function escape($path) {
+        return str_replace("\\", "/", $path);
     }
 
     function clearFiles($path, $startpatt, $endpatt) {
