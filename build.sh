@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir dist
+mkdir -p dist
 cp -r src/. dist
 git add dist/.
