@@ -1,4 +1,4 @@
-# somutils-php
+# someutils-php
 A collection of PHP utilities
 
 ## License
