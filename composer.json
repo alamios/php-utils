@@ -2,7 +2,7 @@
     "name": "alamios/someutils-php",
     "description": "A collection of PHP utilities",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "homepage": "https://github.com/alamios/someutils-php",
     "license": "MIT",
     "authors": [
