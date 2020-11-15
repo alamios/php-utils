@@ -12,15 +12,5 @@
             "homepage": "https://alamios.es",
             "role": "Developer"
         }
-    ],
-    "scripts": {
-      "post-package-install": [
-        "mkdir -p dist",
-        "cp -r src/. dist"
-      ],
-      "post-package-update": [
-        "mkdir -p dist",
-        "cp -r src/. dist"
-      ]
-    }
+    ]
 }
